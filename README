@@ -1,0 +1,5 @@
+A simple wrapper for all of my showoff presentations. Each presentation is in it's own folder, and then I do the following to have each presentation generate a static version of itself to be rendered via this application:
+
+    $ mkdir public/<presentation_name>
+    $ ln -s public/<presentation_name> <presentation_name>/static
+    $ showoff <presentation_folder> static
