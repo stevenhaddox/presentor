@@ -9,6 +9,7 @@ group :production do
   gem "gli"
   gem "pdfkit"
   gem "rmagick"
+  gem "rake"
 end
 
 group :test do
