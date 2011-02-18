@@ -1,0 +1,6 @@
+[submodule "presentations/ruby_rails_agile"]
+	path = presentations/ruby_rails_agile
+	url = https://github.com:stevenhaddox/presentation-ruby_rails_agile.git
+[submodule "presentations/six-ws-of-testing"]
+	path = presentations/six-ws-of-testing
+	url = https://github.com/ngauthier/six-ws-of-testing.git
