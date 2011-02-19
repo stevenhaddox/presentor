@@ -2,7 +2,7 @@ require 'yaml'
 
 namespace :presentations do
   desc "Clone the presentations from their git repositories into the application."
-  task :update do
+  task :clone do
     system("mkdir -p presentations")
     system("rm -rf presentations/*")
     presentations = YAML::load_file('config/presentations.yml')
@@ -22,5 +22,18 @@ namespace :presentations do
       system("bundle exec showoff static")
       system("mv static #{app_root}/public/#{presentation[:title]}")
     end
+  end
+  
+  desc "update is just an alias to clone"
+  task :update do
+    system("bundle exec rake presentations:clone")
+  end
+end
+
+namespace :boot do
+  desc "Initialize presentations & publish"
+  task :strap do
+    system("bundle exec rake presentations:clone")
+    system("bundle exec rake presentations:publish")
   end
 end
