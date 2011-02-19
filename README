@@ -1,5 +1,11 @@
-A simple wrapper for all of my showoff presentations. Each presentation is in it's own folder, and then I do the following to have each presentation generate a static version of itself to be rendered via this application:
+A simple Sinatra app to clone your Showoff presentations, publish a static version, and provide main index to display them all.
 
-    $ mkdir public/<presentation_name>
-    $ ln -s public/<presentation_name> <presentation_name>/static
-    $ showoff <presentation_folder> static
+To start:
+
+    $ bundle exec rake boot:strap
+
+This simply invokes the following rake tasks:
+
+    $ bundle exec rake presentations:clone
+    $ bundle exec rake presentations:publish
+
