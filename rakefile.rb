@@ -20,7 +20,7 @@ namespace :presentations do
     presentations.each do |presentation|
       system("cd #{app_root}/presentations/#{presentation[:title].gsub(' ','-')}")
       system("bundle exec showoff static")
-      system("mv static #{app_root}/public/#{presentation[:title]}")
+      system("mv static #{app_root}/public/#{presentation[:title].gsub(' ','-'}")
     end
   end
   
