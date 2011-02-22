@@ -3,8 +3,8 @@ module Presentor
     get '/' do
       @presentations = []
       fakes = %w(. ..)
-      Dir.foreach("/usr/bin") do |entry|
-         @presentations << entry unless fakes.include? entry
+      Dir.foreach("public") do |presentation_dir|
+         @presentations << presentation_dir unless fakes.include? presentation_dir 
       end
       erb :index
     end
