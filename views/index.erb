@@ -1,0 +1,10 @@
+<html>
+<body>
+hello!
+<% @presentations.each do |presentation_dir| %>
+  <div>
+    <a href="<%= presentation_dir %>"><%=presentation_dir%></a>
+  </div>
+<% end %>
+</body>
+</html>
