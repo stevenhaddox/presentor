@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require './presentor'
+require 'presentor'
 run Presentor::Application

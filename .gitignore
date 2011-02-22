@@ -2,3 +2,5 @@
 config/presentations.yml
 presentations/*
 public/*
+log/*
+tmp/*
