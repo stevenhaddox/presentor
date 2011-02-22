@@ -1,5 +1,5 @@
 module Presentor
-  class Application < Sinatra::Base
+ class Application < Sinatra::Base
     get '/' do
       @presentations = []
       fakes = %w(. ..)
@@ -8,5 +8,5 @@ module Presentor
       end
       erb :index
     end
-  end
+ end
 end
