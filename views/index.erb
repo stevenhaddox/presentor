@@ -1,5 +1,8 @@
 <ul id="presentations">
-<% @presentations.each do |presentation_dir| %>
-  <li><a href='<%= "presentations/#{presentation_dir}" %>/'><%= presentation_dir %></a></li>
+  <%= puts @presentations %>
+<% @presentations.each do |presentation| %>
+  <li class="presentation">
+    <a href='<%= "presentations/#{presentation[:folder]}" %>/'><%= presentation[:title] %></a>
+  </li>
 <% end %>
 </ul>

@@ -1,13 +1,14 @@
 module Presentor
  class Application < Sinatra::Base
-    get '/' do
-      @presentations = []
-      fakes = %w(. ..)
-      Dir.foreach("public/presentations") do |presentation_dir|
-         @presentations << presentation_dir unless fakes.include? presentation_dir
-      end
-      puts @presentations
-      erb :index
+
+  get '/' do
+    @presentations = []
+    presentations = YAML::load_file('config/presentations.yml')
+    presentations.each do |presentation|
+      @presentations << presentation
     end
+    erb :index
+  end
+
  end
 end

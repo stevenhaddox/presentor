@@ -7,7 +7,7 @@ namespace :presentations do
     system("rm -rf presentations/*")
     presentations = YAML::load_file('config/presentations.yml')
     presentations.each do |presentation|
-      system("git clone #{presentation[:url]} presentations/#{presentation[:title].gsub(' ','-')}")
+      system("git clone #{presentation[:url]} presentations/#{presentation[:folder]}")
     end
   end
   
@@ -18,9 +18,9 @@ namespace :presentations do
     system("rm -rf public/presentations/*")
     presentations = YAML::load_file('config/presentations.yml')
     presentations.each do |presentation|
-      system("cd #{app_root}/presentations/#{presentation[:title].gsub(' ','-')}")
+      system("cd #{app_root}/presentations/#{presentation[:folder]}")
       system("bundle exec showoff static")
-      system("mv static #{app_root}/public/presentations/#{presentation[:title].gsub(' ','-')}")
+      system("mv static #{app_root}/public/presentations/#{presentation[:folder]}")
     end
   end
   
@@ -33,7 +33,9 @@ end
 namespace :boot do
   desc "Initialize presentations & publish"
   task :strap do
+    puts "\nCloning presentations in #{Dir.pwd}/presentations..."
     system("bundle exec rake presentations:clone")
+    puts "\nCreating static HTML presentations and moving to #{Dir.pwd}/public/presentations..."
     system("bundle exec rake presentations:publish")
   end
 end
