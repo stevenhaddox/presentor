@@ -14,13 +14,13 @@ namespace :presentations do
   desc "Create static versions of the presentations under the public directory."
   task :publish do
     app_root = Dir.pwd
-    system("mkdir -p public")
-    system("rm -rf public/*")
+    system("mkdir -p public/presentations")
+    system("rm -rf public/presentations/*")
     presentations = YAML::load_file('config/presentations.yml')
     presentations.each do |presentation|
       system("cd #{app_root}/presentations/#{presentation[:title].gsub(' ','-')}")
       system("bundle exec showoff static")
-      system("mv static #{app_root}/public/#{presentation[:title].gsub(' ','-')}")
+      system("mv static #{app_root}/public/presentations/#{presentation[:title].gsub(' ','-')}")
     end
   end
   
