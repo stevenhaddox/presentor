@@ -1,5 +1,5 @@
+<ul id="presentations">
 <% @presentations.each do |presentation_dir| %>
-  <div>
-    <a href='<%= "presentations/#{presentation_dir}" %>/'><%= presentation_dir %></a>
-  </div>
+  <li><a href='<%= "presentations/#{presentation_dir}" %>/'><%= presentation_dir %></a></li>
 <% end %>
+</ul>
