@@ -14,13 +14,13 @@ namespace :presentations do
   desc "Create static versions of the presentations under the public directory."
   task :publish do
     app_root = Dir.pwd
-    system("mkdir -p public/presentations")
-    system("rm -rf public/presentations/*")
+    system("mkdir -p public/p")
+    system("rm -rf public/p/*")
     presentations = YAML::load_file('config/presentations.yml')
     presentations.each do |presentation|
       system("cd #{app_root}/presentations/#{presentation[:folder]}")
       system("bundle exec showoff static")
-      system("mv static #{app_root}/public/presentations/#{presentation[:folder]}")
+      system("mv static #{app_root}/public/p/#{presentation[:folder]}")
     end
   end
   
@@ -33,9 +33,9 @@ end
 namespace :boot do
   desc "Initialize presentations & publish"
   task :strap do
-    puts "\nCloning presentations in #{Dir.pwd}/presentations..."
+    puts "\nCloning presentations in #{Dir.pwd}/presentations ..."
     system("bundle exec rake presentations:clone")
-    puts "\nCreating static HTML presentations and moving to #{Dir.pwd}/public/presentations..."
+    puts "\nCreating static HTML presentations and moving to #{Dir.pwd}/public/p ..."
     system("bundle exec rake presentations:publish")
   end
 end

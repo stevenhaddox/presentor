@@ -1,6 +1,6 @@
 .gitmodules
 config/presentations.yml
 presentations/*
-public/*
+public/p/*
 log/*
 tmp/*
