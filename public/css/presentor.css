@@ -1,0 +1,31 @@
+div#container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+header {
+  margin: 0 0 1em;
+  border-bottom: 1px solid #444;
+  padding: 1em 0 0 .5em;
+  text-align: center;
+}
+header h1 { font-size: 3em; }
+div#main {
+  text-align: center;
+}
+div#main ul#presentations {
+  font-size: 1.5em;
+  line-height: 2em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div#main ul#presentations li {
+  
+}
+footer {
+  margin: 1em 0 0;
+  border-top: 1px solid #444;
+  padding: .5em 0 0 1em;
+  text-align: center;
+  font-size: .9em;
+}
