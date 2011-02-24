@@ -8,7 +8,7 @@ group :production do
   gem "json"
   gem "gli"
   gem "pdfkit"
-  #gem "rmagick"
+  gem "rmagick"
   gem "rake"
 end
 
