@@ -1,3 +1,4 @@
+require 'yaml'
 module Presentor
  class Application < Sinatra::Base
 
